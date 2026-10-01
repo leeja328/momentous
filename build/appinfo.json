@@ -17,13 +17,23 @@
         "HourColor": 10000,
         "MinuteColor": 10001,
         "BackgroundColor": 10002,
-        "LargeFont": 10003
+        "LargeFont": 10003,
+        "HourWeight": 10004,
+        "MinuteWeight": 10005,
+        "DateFormat": 10006,
+        "BottomInfo": 10007,
+        "TempUnit": 10008,
+        "Temperature": 10009,
+        "WeatherCondition": 10010,
+        "RequestWeather": 10011
     },
     "resources": {
         "media": []
     },
     "capabilities": [
-        "configurable"
+        "configurable",
+        "location",
+        "health"
     ],
     "name": "momentous",
     "shortName": "momentous",
@@ -34,6 +44,14 @@
         "HourColor": 10000,
         "MinuteColor": 10001,
         "BackgroundColor": 10002,
-        "LargeFont": 10003
+        "LargeFont": 10003,
+        "HourWeight": 10004,
+        "MinuteWeight": 10005,
+        "DateFormat": 10006,
+        "BottomInfo": 10007,
+        "TempUnit": 10008,
+        "Temperature": 10009,
+        "WeatherCondition": 10010,
+        "RequestWeather": 10011
     }
 }

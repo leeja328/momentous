@@ -28,13 +28,23 @@
       "HourColor",
       "MinuteColor",
       "BackgroundColor",
-      "LargeFont"
+      "LargeFont",
+      "HourWeight",
+      "MinuteWeight",
+      "DateFormat",
+      "BottomInfo",
+      "TempUnit",
+      "Temperature",
+      "WeatherCondition",
+      "RequestWeather"
     ],
     "resources": {
       "media": []
     },
     "capabilities": [
-      "configurable"
+      "configurable",
+      "location",
+      "health"
     ]
   }
 }

@@ -82,6 +82,69 @@
 	var clayConfig = __webpack_require__(6);
 	
 	var clay = new Clay(clayConfig);
+	
+	// Condition ids understood by the watch (see WEATHER_* in momentous.c)
+	var CLEAR = 1, PARTLY_CLOUDY = 2, CLOUDY = 3, RAIN = 4, SNOW = 5, STORM = 6, FOG = 7;
+	
+	// Maps an Open-Meteo WMO weather code to a watch condition id
+	function conditionFromCode(code) {
+	  if (code === 0) return CLEAR;
+	  if (code <= 2) return PARTLY_CLOUDY;
+	  if (code === 3) return CLOUDY;
+	  if (code === 45 || code === 48) return FOG;
+	  if ((code >= 71 && code <= 77) || code === 85 || code === 86) return SNOW;
+	  if (code >= 95) return STORM;
+	  return RAIN;
+	}
+	
+	function useCelsius() {
+	  try {
+	    var settings = JSON.parse(localStorage.getItem('clay-settings')) || {};
+	    return settings.TempUnit === 'C';
+	  } catch (e) {
+	    return false;
+	  }
+	}
+	
+	function fetchWeather() {
+	  navigator.geolocation.getCurrentPosition(function(pos) {
+	    var url = 'https://api.open-meteo.com/v1/forecast' +
+	      '?latitude=' + pos.coords.latitude +
+	      '&longitude=' + pos.coords.longitude +
+	      '&current=temperature_2m,weather_code' +
+	      '&temperature_unit=' + (useCelsius() ? 'celsius' : 'fahrenheit');
+	
+	    var xhr = new XMLHttpRequest();
+	    xhr.onload = function() {
+	      try {
+	        var current = JSON.parse(this.responseText).current;
+	        Pebble.sendAppMessage({
+	          Temperature: Math.round(current.temperature_2m),
+	          WeatherCondition: conditionFromCode(current.weather_code)
+	        });
+	      } catch (e) {
+	        console.log('Weather parse failed: ' + e);
+	      }
+	    };
+	    xhr.open('GET', url);
+	    xhr.send();
+	  }, function(err) {
+	    console.log('Location unavailable: ' + err.message);
+	  }, { timeout: 15000, maximumAge: 60000 });
+	}
+	
+	Pebble.addEventListener('ready', fetchWeather);
+	
+	Pebble.addEventListener('appmessage', function(e) {
+	  if (e.payload.RequestWeather) {
+	    fetchWeather();
+	  }
+	});
+	
+	// Refetch after settings change so a new temperature unit shows up right away
+	Pebble.addEventListener('webviewclosed', function() {
+	  setTimeout(fetchWeather, 1000);
+	});
 
 
 /***/ }),
@@ -121,7 +184,7 @@
 /* 5 */
 /***/ (function(module, exports) {
 
-	module.exports = {"BackgroundColor":10002,"HourColor":10000,"LargeFont":10003,"MinuteColor":10001}
+	module.exports = {"BackgroundColor":10002,"BottomInfo":10007,"DateFormat":10006,"HourColor":10000,"HourWeight":10004,"LargeFont":10003,"MinuteColor":10001,"MinuteWeight":10005,"RequestWeather":10011,"TempUnit":10008,"Temperature":10009,"WeatherCondition":10010}
 
 /***/ }),
 /* 6 */
@@ -172,6 +235,69 @@
 	        "defaultValue": false,
 	        "label": "Large Font",
 	        "description": "Hour fills the top half of the screen, minutes fill the bottom half."
+	      },
+	      {
+	        "type": "select",
+	        "messageKey": "HourWeight",
+	        "defaultValue": "2",
+	        "label": "Hour Weight",
+	        "options": [
+	          { "label": "Thin", "value": "0" },
+	          { "label": "Regular", "value": "1" },
+	          { "label": "Thick", "value": "2" }
+	        ]
+	      },
+	      {
+	        "type": "select",
+	        "messageKey": "MinuteWeight",
+	        "defaultValue": "0",
+	        "label": "Minute Weight",
+	        "options": [
+	          { "label": "Thin", "value": "0" },
+	          { "label": "Regular", "value": "1" },
+	          { "label": "Thick", "value": "2" }
+	        ]
+	      }
+	    ]
+	  },
+	  {
+	    "type": "section",
+	    "items": [
+	      {
+	        "type": "heading",
+	        "defaultValue": "Info"
+	      },
+	      {
+	        "type": "select",
+	        "messageKey": "DateFormat",
+	        "defaultValue": "0",
+	        "label": "Date (Top)",
+	        "options": [
+	          { "label": "None", "value": "0" },
+	          { "label": "MM/DD", "value": "1" },
+	          { "label": "DD/MM", "value": "2" }
+	        ]
+	      },
+	      {
+	        "type": "select",
+	        "messageKey": "BottomInfo",
+	        "defaultValue": "0",
+	        "label": "Bottom",
+	        "options": [
+	          { "label": "None", "value": "0" },
+	          { "label": "Temperature", "value": "1" },
+	          { "label": "Step Count", "value": "2" }
+	        ]
+	      },
+	      {
+	        "type": "radiogroup",
+	        "messageKey": "TempUnit",
+	        "defaultValue": "F",
+	        "label": "Temperature Unit",
+	        "options": [
+	          { "label": "Fahrenheit", "value": "F" },
+	          { "label": "Celsius", "value": "C" }
+	        ]
 	      }
 	    ]
 	  },

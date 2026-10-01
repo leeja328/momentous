@@ -1,6 +1,14 @@
 {
     "BackgroundColor": 10002,
+    "BottomInfo": 10007,
+    "DateFormat": 10006,
     "HourColor": 10000,
+    "HourWeight": 10004,
     "LargeFont": 10003,
-    "MinuteColor": 10001
+    "MinuteColor": 10001,
+    "MinuteWeight": 10005,
+    "RequestWeather": 10011,
+    "TempUnit": 10008,
+    "Temperature": 10009,
+    "WeatherCondition": 10010
 }

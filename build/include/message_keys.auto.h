@@ -7,6 +7,14 @@
 //
 
 extern uint32_t MESSAGE_KEY_BackgroundColor;
+extern uint32_t MESSAGE_KEY_BottomInfo;
+extern uint32_t MESSAGE_KEY_DateFormat;
 extern uint32_t MESSAGE_KEY_HourColor;
+extern uint32_t MESSAGE_KEY_HourWeight;
 extern uint32_t MESSAGE_KEY_LargeFont;
 extern uint32_t MESSAGE_KEY_MinuteColor;
+extern uint32_t MESSAGE_KEY_MinuteWeight;
+extern uint32_t MESSAGE_KEY_RequestWeather;
+extern uint32_t MESSAGE_KEY_TempUnit;
+extern uint32_t MESSAGE_KEY_Temperature;
+extern uint32_t MESSAGE_KEY_WeatherCondition;
