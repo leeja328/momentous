@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pebble build *)",
+      "Bash(pebble clean *)",
+      "Bash(pebble install *)",
+      "Bash(pebble screenshot *)",
+      "Bash(pebble kill *)",
+      "Bash(awk '{print $2, $11, $12, $13}')",
+      "Bash(kill 12441 11292 11524 11303 11300)"
+    ]
+  }
+}
