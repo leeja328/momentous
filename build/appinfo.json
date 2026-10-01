@@ -1,0 +1,39 @@
+{
+    "displayName": "momentous",
+    "uuid": "cf594f05-f0f1-44ee-98e6-b572ab29c0d7",
+    "sdkVersion": "3",
+    "enableMultiJS": true,
+    "targetPlatforms": [
+        "aplite",
+        "basalt",
+        "chalk",
+        "diorite",
+        "emery"
+    ],
+    "watchapp": {
+        "watchface": true
+    },
+    "messageKeys": {
+        "HourColor": 10000,
+        "MinuteColor": 10001,
+        "BackgroundColor": 10002,
+        "LargeFont": 10003
+    },
+    "resources": {
+        "media": []
+    },
+    "capabilities": [
+        "configurable"
+    ],
+    "name": "momentous",
+    "shortName": "momentous",
+    "longName": "momentous",
+    "versionLabel": "1.0",
+    "companyName": "MakeAwesomeHappen",
+    "appKeys": {
+        "HourColor": 10000,
+        "MinuteColor": 10001,
+        "BackgroundColor": 10002,
+        "LargeFont": 10003
+    }
+}
