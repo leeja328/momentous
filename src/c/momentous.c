@@ -340,8 +340,8 @@ static void prv_default_settings(void) {
   s_settings.large_font = false;
   s_settings.date_format = DATE_NONE;
   s_settings.bottom_info = BOTTOM_NONE;
-  s_settings.hour_weight = WEIGHT_REGULAR; // TEMP
-  s_settings.minute_weight = WEIGHT_REGULAR; // TEMP
+  s_settings.hour_weight = WEIGHT_THICK;
+  s_settings.minute_weight = WEIGHT_THIN;
 }
 
 static void prv_load_settings(void) {

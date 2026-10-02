@@ -1484,11 +1484,11 @@ OUTPUT(/Users/jameslee/Desktop/momentous/build/aplite/pebble-app.elf elf32-littl
 .debug_ranges   0x0000000000000000      0x4d8
  .debug_ranges  0x0000000000000000      0x4d8 src/c/momentous.c.41.o
 
-.debug_line     0x0000000000000000      0x992
- .debug_line    0x0000000000000000      0x739 src/c/momentous.c.41.o
- .debug_line    0x0000000000000739      0x15b aplite/appinfo.auto.c.41.o
- .debug_line    0x0000000000000894       0x1d aplite/src/resource_ids.auto.c.41.o
- .debug_line    0x00000000000008b1       0xe1 src/message_keys.auto.c.41.o
+.debug_line     0x0000000000000000      0x991
+ .debug_line    0x0000000000000000      0x738 src/c/momentous.c.41.o
+ .debug_line    0x0000000000000738      0x15b aplite/appinfo.auto.c.41.o
+ .debug_line    0x0000000000000893       0x1d aplite/src/resource_ids.auto.c.41.o
+ .debug_line    0x00000000000008b0       0xe1 src/message_keys.auto.c.41.o
 
 .debug_str      0x0000000000000000     0x10a1
  .debug_str     0x0000000000000000      0xe1f src/c/momentous.c.41.o
