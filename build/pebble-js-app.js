@@ -184,12 +184,30 @@
 /* 5 */
 /***/ (function(module, exports) {
 
-	module.exports = {"BackgroundColor":10002,"BottomInfo":10007,"DateFormat":10006,"HourColor":10000,"HourWeight":10004,"LargeFont":10003,"MinuteColor":10001,"MinuteWeight":10005,"RequestWeather":10011,"TempUnit":10008,"Temperature":10009,"WeatherCondition":10010}
+	module.exports = {"BackgroundColor":10002,"BottomLeft":10009,"BottomRight":10010,"ComplicationColor":10003,"HourColor":10000,"HourWeight":10005,"LargeFont":10004,"MinuteColor":10001,"MinuteWeight":10006,"RequestWeather":10014,"TempUnit":10011,"Temperature":10012,"TopLeft":10007,"TopRight":10008,"WeatherCondition":10013}
 
 /***/ }),
 /* 6 */
 /***/ (function(module, exports) {
 
+	// Values match the COMPLICATION_* ids in momentous.c
+	function corner(messageKey, label) {
+	  return {
+	    "type": "select",
+	    "messageKey": messageKey,
+	    "defaultValue": "0",
+	    "label": label,
+	    "options": [
+	      { "label": "None", "value": "0" },
+	      { "label": "Weather", "value": "1" },
+	      { "label": "Battery", "value": "2" },
+	      { "label": "Day of Week", "value": "3" },
+	      { "label": "Day of Month", "value": "4" },
+	      { "label": "Steps", "value": "5" }
+	    ]
+	  };
+	}
+	
 	module.exports = [
 	  {
 	    "type": "heading",
@@ -219,6 +237,12 @@
 	        "messageKey": "BackgroundColor",
 	        "defaultValue": "0x000000",
 	        "label": "Background Color"
+	      },
+	      {
+	        "type": "color",
+	        "messageKey": "ComplicationColor",
+	        "defaultValue": "0xAAAAAA",
+	        "label": "Complication Color"
 	      }
 	    ]
 	  },
@@ -265,30 +289,12 @@
 	    "items": [
 	      {
 	        "type": "heading",
-	        "defaultValue": "Info"
+	        "defaultValue": "Complications"
 	      },
-	      {
-	        "type": "select",
-	        "messageKey": "DateFormat",
-	        "defaultValue": "0",
-	        "label": "Date (Top)",
-	        "options": [
-	          { "label": "None", "value": "0" },
-	          { "label": "MM/DD", "value": "1" },
-	          { "label": "DD/MM", "value": "2" }
-	        ]
-	      },
-	      {
-	        "type": "select",
-	        "messageKey": "BottomInfo",
-	        "defaultValue": "0",
-	        "label": "Bottom",
-	        "options": [
-	          { "label": "None", "value": "0" },
-	          { "label": "Temperature", "value": "1" },
-	          { "label": "Step Count", "value": "2" }
-	        ]
-	      },
+	      corner("TopLeft", "Top Left"),
+	      corner("TopRight", "Top Right"),
+	      corner("BottomLeft", "Bottom Left"),
+	      corner("BottomRight", "Bottom Right"),
 	      {
 	        "type": "radiogroup",
 	        "messageKey": "TempUnit",

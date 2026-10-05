@@ -17,22 +17,25 @@
         "HourColor": 10000,
         "MinuteColor": 10001,
         "BackgroundColor": 10002,
-        "LargeFont": 10003,
-        "HourWeight": 10004,
-        "MinuteWeight": 10005,
-        "DateFormat": 10006,
-        "BottomInfo": 10007,
-        "TempUnit": 10008,
-        "Temperature": 10009,
-        "WeatherCondition": 10010,
-        "RequestWeather": 10011
+        "ComplicationColor": 10003,
+        "LargeFont": 10004,
+        "HourWeight": 10005,
+        "MinuteWeight": 10006,
+        "TopLeft": 10007,
+        "TopRight": 10008,
+        "BottomLeft": 10009,
+        "BottomRight": 10010,
+        "TempUnit": 10011,
+        "Temperature": 10012,
+        "WeatherCondition": 10013,
+        "RequestWeather": 10014
     },
     "resources": {
         "media": []
     },
     "capabilities": [
-        "configurable",
         "location",
+        "configurable",
         "health"
     ],
     "name": "momentous",
@@ -44,14 +47,17 @@
         "HourColor": 10000,
         "MinuteColor": 10001,
         "BackgroundColor": 10002,
-        "LargeFont": 10003,
-        "HourWeight": 10004,
-        "MinuteWeight": 10005,
-        "DateFormat": 10006,
-        "BottomInfo": 10007,
-        "TempUnit": 10008,
-        "Temperature": 10009,
-        "WeatherCondition": 10010,
-        "RequestWeather": 10011
+        "ComplicationColor": 10003,
+        "LargeFont": 10004,
+        "HourWeight": 10005,
+        "MinuteWeight": 10006,
+        "TopLeft": 10007,
+        "TopRight": 10008,
+        "BottomLeft": 10009,
+        "BottomRight": 10010,
+        "TempUnit": 10011,
+        "Temperature": 10012,
+        "WeatherCondition": 10013,
+        "RequestWeather": 10014
     }
 }

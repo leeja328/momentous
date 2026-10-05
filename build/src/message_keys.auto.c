@@ -7,14 +7,17 @@
 //
 
 uint32_t MESSAGE_KEY_BackgroundColor = 10002;
-uint32_t MESSAGE_KEY_BottomInfo = 10007;
-uint32_t MESSAGE_KEY_DateFormat = 10006;
+uint32_t MESSAGE_KEY_BottomLeft = 10009;
+uint32_t MESSAGE_KEY_BottomRight = 10010;
+uint32_t MESSAGE_KEY_ComplicationColor = 10003;
 uint32_t MESSAGE_KEY_HourColor = 10000;
-uint32_t MESSAGE_KEY_HourWeight = 10004;
-uint32_t MESSAGE_KEY_LargeFont = 10003;
+uint32_t MESSAGE_KEY_HourWeight = 10005;
+uint32_t MESSAGE_KEY_LargeFont = 10004;
 uint32_t MESSAGE_KEY_MinuteColor = 10001;
-uint32_t MESSAGE_KEY_MinuteWeight = 10005;
-uint32_t MESSAGE_KEY_RequestWeather = 10011;
-uint32_t MESSAGE_KEY_TempUnit = 10008;
-uint32_t MESSAGE_KEY_Temperature = 10009;
-uint32_t MESSAGE_KEY_WeatherCondition = 10010;
+uint32_t MESSAGE_KEY_MinuteWeight = 10006;
+uint32_t MESSAGE_KEY_RequestWeather = 10014;
+uint32_t MESSAGE_KEY_TempUnit = 10011;
+uint32_t MESSAGE_KEY_Temperature = 10012;
+uint32_t MESSAGE_KEY_TopLeft = 10007;
+uint32_t MESSAGE_KEY_TopRight = 10008;
+uint32_t MESSAGE_KEY_WeatherCondition = 10013;
