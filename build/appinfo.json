@@ -34,15 +34,15 @@
         "media": []
     },
     "capabilities": [
-        "location",
         "configurable",
-        "health"
+        "health",
+        "location"
     ],
     "name": "momentous",
     "shortName": "momentous",
     "longName": "momentous",
     "versionLabel": "1.0",
-    "companyName": "MakeAwesomeHappen",
+    "companyName": "Neema",
     "appKeys": {
         "HourColor": 10000,
         "MinuteColor": 10001,
